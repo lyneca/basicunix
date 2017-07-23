@@ -8,40 +8,89 @@
 </head>
 <body>
 	<div class="container">
-		<div class="ls">
-			<h1>LS</h1>
-			<h2>Lists directory contents</h2>
-			<p>
-			<div class="code">
-				$ ls
-			</div>
-			</p>
-		</div>
-		<div class="cd">
+		<div class="tc cd">
 			<h1>CD</h1>
-			<h2>Changes current directory</h2>
 			<p>
-			<div class="code">
-				$ cd
-			</div>
+			In a UNIX system, you navigate through a directory structure from the command prompt.
+			<span class="code">
+				$ cd [path]
+			</span>
+			The 'cd' command (short for 'change directory') moves the current working directory to the directory specified by 'path'.<br /><br /> 
+			Unix paths use forward slashes, and '~' signifies the home directory.
+			<span class="code">
+				~ $ ls <br />
+				Documents Desktop <br /><br />
+				~ $ cd Documents <br />
+				~/Documents $ ls <br />
+				document_1.txt document_2.txt
+			</span>
 			</p>
 		</div>
-		<div class="rm">
+		<div class="tc ls">
+			<h1>LS</h1>
+			<p>
+			'ls' lists the contents of the current working directory.
+			<span class="code">
+				$ ls
+			</span>
+			'ls' also has some options (known as 'flags'). <br /><br />
+			To list all files (including hidden ones):
+			<span class="code">
+				$ ls -a
+			</span>
+			To list all files and show attributes of the files (permissions, size, modified dates etc)
+			<span class="code">
+				$ ls -l
+			</span>
+			These can be combined.
+			<span class="code">
+				$ ls -la
+			</span><br />
+			</p>
+		</div>
+		<div class="tc np">
+			<div class="mv">
+				<h1>MV</h1>
+				<p>
+				'mv' moves a file to another location and name.
+				<span class="code">
+					$ mv file1 [path/]file2
+				</span>
+				Warning! If you overwrite a file with another file, the overwritten file will be permanently deleted!
+				</p>
+			</div>
+			<div class="cp">
+				<h1>CP</h1>
+				<p>
+				<span class="code">
+					$ cp file1 [path/]file2
+				</span>
+				'cp' copies a file to another location and/or name.<br /><br />
+				Both 'mv' and 'cp' require the '-r' flag to act on directories.
+				<span class="code">
+					$ cp -r dir1 [path/]dir2
+				</span>
+				</p>
+			</div>
+		</div>
+		<div class="tc rm">
 			<h1>RM</h1>
-			<h2>Deletes files</h2>
 			<p>
-			<div class="code">
-				$ rm
-			</div>
-			</p>
-		</div>
-		<div class="mv">
-			<h1>MV</h1>
-			<h2>Moves/renames files</h2>
-			<p>
-			<div class="code">
-				$ mv
-			</div>
+			'rm' removes files and directories.
+			<span class="code">
+				$ rm file
+			</span >
+			Generally speaking, the UNIX command line has no 'recycle bin' like Windows and Mac. Be careful what you delete.
+			<br /><br />
+			Some of the more useful 'rm' flags:
+			<span class="code">
+				$ rm -r file
+			</span >
+			'rm -r' deletes directories and all files inside.<br />'-r' stands for 'recursive'.
+			<span class="code">
+				$ rm -f file
+			</span >
+			The '-f' flag forces the deletion, ignoring files that don't exist and never prompting before removal.
 			</p>
 		</div>
 	</div>
