@@ -1,101 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Not a binary I promise -->
 <head>
-	<meta charset="UTF-8">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Roboto+Mono" rel="stylesheet">
-	<link rel="stylesheet" href="global.css" type="text/css">
-	<title>Basic UNIX Commands</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Basic UNIX Commands</title>
+
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Roboto+Mono" rel="stylesheet">
 </head>
 <body>
-	<div class="container">
-		<div class="tc cd">
-			<h1>CD</h1>
-			<p>
-			In a UNIX system, you navigate through a directory structure from the command prompt.
-			<span class="code">
-				$ cd [path]
-			</span>
-			The 'cd' command (short for 'change directory') moves the current working directory to the directory specified by 'path'.<br /><br /> 
-			Unix paths use forward slashes, and '~' signifies the home directory.
-			<span class="code">
-				~ $ ls <br />
-				Documents Desktop <br /><br />
-				~ $ cd Documents <br />
-				~/Documents $ ls <br />
-				document_1.txt document_2.txt
-			</span>
-			</p>
-		</div>
-		<div class="tc ls">
-			<h1>LS</h1>
-			<p>
-			'ls' lists the contents of the current working directory.
-			<span class="code">
-				$ ls
-			</span>
-			'ls' also has some options (known as 'flags'). <br /><br />
-			To list all files (including hidden ones):
-			<span class="code">
-				$ ls -a
-			</span>
-			To list all files and show attributes of the files (permissions, size, modified dates etc)
-			<span class="code">
-				$ ls -l
-			</span>
-			These can be combined.
-			<span class="code">
-				$ ls -la
-			</span><br />
-			</p>
-		</div>
-		<div class="tc np">
-			<div class="mv">
-				<h1>MV</h1>
-				<p>
-				'mv' moves a file to another location and name.
-				<span class="code">
-					$ mv file1 [path/]file2
-				</span>
-				Warning! If you overwrite a file with another file, the overwritten file will be permanently deleted!
-				</p>
-			</div>
-			<div class="cp">
-				<h1>CP</h1>
-				<p>
-				<span class="code">
-					$ cp file1 [path/]file2
-				</span>
-				'cp' copies a file to another location and/or name.<br /><br />
-				Both 'mv' and 'cp' require the '-r' flag to act on directories.
-				<span class="code">
-					$ cp -r dir1 [path/]dir2
-				</span>
-				</p>
-			</div>
-		</div>
-		<div class="tc rm">
-			<h1>RM</h1>
-			<p>
-			'rm' removes files and directories.
-			<span class="code">
-				$ rm file
-			</span >
-			Generally speaking, the UNIX command line has no 'recycle bin' like Windows and Mac. Be careful what you delete.
-			<br /><br />
-			Some of the more useful 'rm' flags:
-			<span class="code">
-				$ rm -r file
-			</span >
-			'rm -r' deletes directories and all files inside.<br />'-r' stands for 'recursive'.
-			<span class="code">
-				$ rm -f file
-			</span >
-			The '-f' flag forces the deletion, ignoring files that don't exist and never prompting before removal.
-			</p>
-		</div>
-	</div>
-	<div id="footer">
-		<a href="https://github.com/lyneca/basicunix">source</a> | <a href="https://github.com/lyneca">lyneca</a>
-	</div>
+  <header>
+    <h1>Basic UNIX Commands</h1>
+  </header>
+  <div class="cd">
+    <h1>CD</h1>
+    <p>In a UNIX system, you navigate through a directory structure from the command prompt.</p>
+    <code>$ cd [path]</code>
+    <p>The 'cd' command (short for 'change directory') moves the current working directory to the directory specified by 'path'.</p>
+    <p>Unix paths use forward slashes, and '~' signifies the home directory.</p>
+    <code>~ $ ls
+Documents Desktop
+
+~ $ cd Documents
+~/Documents $ ls
+document_1.txt document_2.txt</code>
+  </div>
+  <div class="ls">
+    <h1>LS</h1>
+    <p>'ls' lists the contents of the current working directory.</p>
+    <code>$ ls</code>
+    <p>'ls' also has some options (known as 'flags').</p>
+    <p>To list all files (including hidden ones):</p>
+    <code>$ ls -a</code>
+    <p>To list all files and show attributes of the files (permissions, size, modified dates etc)</p>
+    <code>$ ls -l</code>
+    <p>These can be combined.</p>
+    <code>$ ls -la</code>
+  </div>
+  <div class="mv">
+    <h1>MV</h1>
+    <p>'mv' moves a file to another location and name.</p>
+    <code>$ mv file1 [path/]file2</code>
+    <p><strong>Warning!</strong> If you overwrite a file with another file, the overwritten file will be permanently deleted!</p>
+  </div>
+  <div class="cp">
+    <h1>CP</h1>
+    <code>$ cp file1 [path/]file2</code>
+    <p>'cp' copies a file to another location and/or name.</p>
+    <p>Both 'mv' and 'cp' require the '-r' flag to act on directories.</p>
+    <code>$ cp -r dir1 [path/]dir2</code>
+  </div>
+  <div class="rm">
+    <h1>RM</h1>
+    <p>'rm' removes files and directories.</p>
+    <code>$ rm file</code>
+    <p>Generally speaking, the UNIX command line has no 'recycle bin' like Windows and Mac. Be careful what you delete.</p>
+    <p>Some of the more useful 'rm' flags:</p>
+    <code>$ rm -r file</code>
+    <p>'rm -r' deletes directories and all files inside.<br><i>'-r' stands for 'recursive'.</i></p>
+    <code>$ rm -f file</code>
+    <p>The '-f' flag forces the deletion, ignoring files that don't exist and never prompting before removal.</p>
+  </div>
+  <footer><a href="https://github.com/lyneca/basicunix">source</a> | <a href="https://github.com/lyneca">lyneca</a></footer>
 </body>
 </html>
